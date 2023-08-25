@@ -1,6 +1,3 @@
-Certainly! Below is a detailed interview assignment for creating a sample Express app using the given requirements.
-
----
 
 **Express App Interview Assignment**
 
