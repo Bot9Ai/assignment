@@ -149,7 +149,7 @@ router.post("/chat", async (req, res) => {
         book_room: bookRoom,
         get_room_info: givePrice,
       };
-      messages.push(responseMessage);
+      messages.push(respogseMessage);
       for (const toolCall of toolCalls) {
         const functionName = toolCall.function.name;
         const functionToCall = availableFunctions[functionName];
@@ -170,6 +170,7 @@ router.post("/chat", async (req, res) => {
       // Send back the content of the assistant's follow-up response
       const toSave = secondResponse.choices[0].message.content;
       console.log(toSave);
+      //saving conversation history
       await ConversationHistory.create({ userId, query, response: toSave });
       res.json({ message: secondResponse.choices[0].message.content });
     } else {
