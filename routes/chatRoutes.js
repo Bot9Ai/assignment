@@ -149,7 +149,7 @@ router.post("/chat", async (req, res) => {
         book_room: bookRoom,
         get_room_info: givePrice,
       };
-      messages.push(respogseMessage);
+      messages.push(responseMessage);
       for (const toolCall of toolCalls) {
         const functionName = toolCall.function.name;
         const functionToCall = availableFunctions[functionName];
